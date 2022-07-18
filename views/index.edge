@@ -2,7 +2,7 @@
  
 @section('content')
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('img/jollof1-bg.jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -10,15 +10,13 @@
         <div class="site-heading">
           <h1 id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <span class="carousel-inner">
-            <span class="carousel-item active">Blog for Relvant and Personal post</span>
-            <span class="carousel-item">Create an account to start creating your content</span>
-            <span class="carousel-item">Login any time to create posts</span>
-            <span class="carousel-item">Share Webpage to friends, For Them to View</span>
-            <span class="carousel-item">Update launch January 2022</span>
-            <span class="carousel-item">Get ready for Videos update(:-.</span>                                    
+            <span class="carousel-item active">ESSENCE FOODS NO.1 DOOR TO DOOR FOOD DELIVERY</span>
+            <span class="carousel-item">TASTY FOODS AT YOUR FINGER TIPS.</span>
+            <span class="carousel-item">CLICK ON THE MENU TAB TO SEE FOOD MENU.</span>   
+            <span class="carousel-item">CLICK ON ORDER TO TAKE OUT AN ORDER.</span>
+            <span class="carousel-item">QUALITY IS ASSURED.</span>                                 
           </span>
           </h1>
-          <span class="subheading">A Website by Mateen James. <i class="fas fa-smile"></i></span>
         </div>
       </div>
     </div>
@@ -26,17 +24,20 @@
 </header>
  
 <!-- Main Content -->
-<div class="container">
+<div class="container" id="menu">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      @each(post in posts)
+      @each(post in menuposts)
         <div class="post-preview">
           <a href="/post/{{ post._id }}">
             <h2 class="post-title">
               {{ post.title }}
             </h2>
           </a>
-          <p class="post-meta">Posted By
+          <div class="clearfix">
+        <a class="btn btn-primary" href="#">ADD FOR NGN1,500</a>
+      </div>
+  <p class="post-meta">Posted By
           <a href="{{post.pageurl}}">{{ post.username }}</a>
           on {{ post.createdAt.toDateString() }}
           </p>
@@ -45,7 +46,7 @@
       @endeach
       <!-- Pager -->
       <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        <a class="btn btn-primary float-right" href="#">More MENU</a>
       </div>
     </div>
   </div>

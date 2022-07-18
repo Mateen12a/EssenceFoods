@@ -10,7 +10,7 @@ const flash = require("connect-flash");
 const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated');
 const createPost = require('./controllers/createPost');
 const Home = require('./controllers/home');
-
+const about = require('./controllers/about');
 const createUser = require("./controllers/createUser");
 const storeUser = require('./controllers/storeUser');
 const login = require("./controllers/login");
@@ -23,7 +23,7 @@ const logout = require('./controllers/logOut');
 const storePost = require('./middleware/storePost');
 
 
-new mongoose.connect('mongodb+srv://mateen:mateen@cluster0.ydjp5.mongodb.net/TodoDB?retryWrites=true&w=majority', {
+new mongoose.connect('mongodb+srv://mateen:mateen@cluster0.ydjp5.mongodb.net/EssenceFoodsDB?retryWrites=true&w=majority', {
         useNewUrlParser: true
     })
     .then(() => 'You are now connected to Mongo!')
@@ -58,7 +58,8 @@ app.use(bodyParser.urlencoded({
     uploadDir: './public/posts'
 }));
 app.get("/", Home);
-
+app.get('/about', about);
+app.get("/admin",  redirectIfAuthenticated, login);
 app.get("/post/new", auth, createPost);
 app.get("/auth/login", redirectIfAuthenticated, login);
 app.post("/users/login", redirectIfAuthenticated, loginUser);

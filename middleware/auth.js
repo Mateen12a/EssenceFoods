@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
         if (error || !user) {
             return res.redirect('/')
         }
- 
+
         next();
     });
 }

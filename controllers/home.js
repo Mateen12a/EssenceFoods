@@ -1,10 +1,10 @@
-const Post  = require('../database/models/Post');
+const MenuPost  = require('../database/models/Menu');
 
 module.exports = async (req, res) => {
-const posts = await Post.find({});
+const menuposts = await MenuPost.find({});
 
 
     res.render('index', {
-        posts
+        menuposts
     });
 };

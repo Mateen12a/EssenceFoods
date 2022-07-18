@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema({
     title: String,
-    username: String,
+    adminname: String,
     description: String,
-    pageurl: String,
+    pricing: String,
     image: String,
     content: String,
     createdAt: {
@@ -13,6 +13,6 @@ const PostSchema = new mongoose.Schema({
     }
 });
 
-const Post = mongoose.model('Post', PostSchema);
+const MenuPost = mongoose.model('MenuPost', PostSchema);
 
-module.exports = Post;
+module.exports = MenuPost;

@@ -8,16 +8,15 @@
 @section('content')
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('{{ post.image }}')">
+    <header class="masthead" style="background-image: url('{{ menupost.image }}')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1>{{post.title}} </h1>
-              <span class="meta">Posted by
-                <a href="{{post.pageurl}}" target="_blank">{{post.username}}</a>
-                on {{post.createdAt.toDateString()}}</span>
+              <h1>{{menupost.title}} </h1>
+              <h3>NGN {{menupost.pricing}}</h3>
+              <a class="btn btn-primary" href="#">Add for NGN {{menupost.pricing}}</a>
             </div>
           </div>
         </div>
@@ -29,7 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-          {{post.content}}
+          {{menupost.content}}
           </div>
         </div>
       </div>

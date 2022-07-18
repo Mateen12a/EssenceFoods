@@ -17,11 +17,11 @@ module.exports = (req, res) => {
                     req.session.userId = user._id
                     res.redirect('/')
                 } else {
-                    res.redirect('/auth/login')
+                    res.redirect('/admin')
                 }
             });
         } else {
-            return res.redirect('/auth/login');
+            return res.redirect('/admin');
         }
     });
 };

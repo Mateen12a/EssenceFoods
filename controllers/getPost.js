@@ -1,8 +1,8 @@
-const Post = require('../database/models/Post')
+const MenuPost = require('../database/models/Menu')
 
 module.exports = async (req, res) => {
-    const post = await Post.findById(req.params.id);
+    const menupost = await MenuPost.findById(req.params.id);
     res.render("post", {
-        post
+        menupost
     });
 }

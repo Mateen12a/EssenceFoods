@@ -1,5 +1,5 @@
 const path = require('path')
-const Post = require('../database/models/Post')
+const MenuPost = require('../database/models/Menu')
  
 module.exports = (req, res) => {
     const {
@@ -7,10 +7,10 @@ module.exports = (req, res) => {
     } = req.files;
  
     image.mv(path.resolve(__dirname, '..', 'public/posts', image.name), (error) => {
-        Post.create({
+        MenuPost.create({
             ...req.body,
             image: `/posts/${image.name}`
-        }, (error, post) => {
+        }, (error, menupost) => {
             res.redirect("/");
         });
     });
